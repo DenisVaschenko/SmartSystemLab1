@@ -1,0 +1,11 @@
+flowchart TB
+    schedule["Служба розкладу"]
+    dispatcher["Диспетчер"]
+    infra["Інженер вокзалу"]
+    system["Система озвучення та інформування на вокзалі"]
+    passenger["Пасажир"]
+    schedule -->|"зміни рейсів і колій"| system
+    dispatcher -->|"текст, пріоритет, зони"| system
+    system -->|"результат по зонах"| dispatcher
+    system -->|"стан обладнання"| infra
+    system -->|"звук і текст у зоні"| passenger
